@@ -22,7 +22,7 @@ public class Menu {
 
     public void optionsMenu() {
 
-        String opcoesMenu = """
+        final String OPCOES_MENU = """
                 *****************************************************************
                 *            C O N V E R S O R    D E    M O E D A S            *
                 *****************************************************************
@@ -46,7 +46,7 @@ public class Menu {
                 *****************************************************************
                 Escolha uma opção válida:""";
 
-        System.out.println(opcoesMenu);
+        System.out.println(OPCOES_MENU);
     }
 
     public void executeOptionsMenu(Scanner scanner, int optionsMenu, List<String> historyConversion) {

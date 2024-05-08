@@ -15,15 +15,15 @@ public class ApiConverterExchangeRateApi implements ApiConverter {
     @Override
     public Converter apiConverter(String origin, String destiny, String value) {
         DotEnv dotEnv = new DotEnv();
-        String apiKey = dotEnv.getDotEnv("MY_ENV_APIKEY");
-        String apiURI = dotEnv.getDotEnv("MY_ENV_APIURI")
-                .replace("[APIKEY]", apiKey)
+        final String API_KEY = dotEnv.getDotEnv("MY_ENV_APIKEY");
+        final String API_URI = dotEnv.getDotEnv("MY_ENV_APIURI")
+                .replace("[APIKEY]", API_KEY)
                 .concat("/").concat(origin.toUpperCase(Locale.ROOT))
                 .concat("/").concat(destiny.toUpperCase(Locale.ROOT))
                 .concat("/").concat(value.toUpperCase(Locale.ROOT));
 
         try {
-            URI linkURI = URI.create(apiURI);
+            URI linkURI = URI.create(API_URI);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(linkURI)

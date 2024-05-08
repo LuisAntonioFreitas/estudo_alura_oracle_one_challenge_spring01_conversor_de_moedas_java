@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
 
         Menu menu = new Menu();
@@ -12,12 +13,12 @@ public class Main {
         ValidNumber validNumber = new ValidNumber();
         List<String> historyConversion = new ArrayList<>();
 
+        final int OPTIONS_LIMIT = 17;
         int optionsMenu = 0;
-        int optionsLimit = 17;
-        while (optionsMenu != optionsLimit) {
+        while (optionsMenu != OPTIONS_LIMIT) {
             menu.optionsMenu();
 
-            optionsMenu = validNumber.getValidInteger(scanner, optionsLimit);
+            optionsMenu = validNumber.getValidInteger(scanner, OPTIONS_LIMIT);
 
             switch (optionsMenu) {
                 case 1:

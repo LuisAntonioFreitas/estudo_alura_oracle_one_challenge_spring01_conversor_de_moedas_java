@@ -17,7 +17,7 @@ public class ValidNumber {
                     input = input.trim().replace(".", "").replace(",","");
                 }
 
-                number = Integer.valueOf(input);
+                number = Integer.valueOf(input.trim());
                 if (number > 0 && (limit == null || number <= limit)) {
                     isValid = true;
                 } else {
@@ -43,7 +43,7 @@ public class ValidNumber {
                     input = input.trim().replace(".", "").replace(",",".");
                 }
 
-                number = Double.valueOf(input);
+                number = Double.valueOf(input.trim());
                 if (number > 0 && (limit == null || number <= limit)) {
                     isValid = true;
                 } else {
